@@ -16,18 +16,18 @@ class Shop {
         //Handling the special items first.//
         //=================================//
         
-        if (this.items[i].name = 'Aged Brie' || 
-            this.items[i].name = 'Backstage passes to a TAFKAL80ETC concert' || 
-            this.items[i].name = 'Sulfuras, Hand of Ragnaros' || 
-            this.items[i].name = 'Conjured'
+        if (this.items[i].name === 'Aged Brie' || 
+            this.items[i].name === 'Backstage passes to a TAFKAL80ETC concert' || 
+            this.items[i].name === 'Sulfuras, Hand of Ragnaros' || 
+            this.items[i].name === 'Conjured'
            ) {
             
             //=============================================//
             //Handling Aged Brie and Backstage items below.//
             //=============================================//
             
-            if(this.items[i].name = 'Aged Brie' || 
-               this.items[i].name = 'Backstage passes to a TAFKAL80ETC concert'
+            if(this.items[i].name === 'Aged Brie' || 
+               this.items[i].name === 'Backstage passes to a TAFKAL80ETC concert'
               ) {
                 if(this.items[i].sellIn > 0) {
                     if(this.items[i].quality > 0) {
@@ -44,7 +44,7 @@ class Shop {
                             //Handling Backstage item below. It is mentioned in the requirement that, if concert is over, Quality //becomes 0. Hence, assuming that a boolean variable 'concertOver' was defined and is true when Concert //is over and false otherwise. I haven't defined it as it is mentioned in the requirement that we can //make changes only to the updateQuality() method.
                             //=================================================================================================//
                             
-                            if(concertOver = false) {
+                            if(concertOver === false) {
                                 if(this.items[i].sellIn <= 10) { //If sell date is 10 days or less
                                     if(this.items[i].sellIn > 5) { //but greater than 5, then increase quality by 2.
                                         if((this.items[i].quality + 2) >= 50) {
@@ -79,7 +79,7 @@ class Shop {
                             }
                         }        
                     }
-                    esle { 
+                    else { 
                         this.items[i].quality = 0;
                     }
                 }
@@ -93,7 +93,7 @@ class Shop {
             //=====================================//
             
             else { 
-                if(this.items[i].name = 'Conjured') {
+                if(this.items[i].name === 'Conjured') {
                     if(this.items[i].sellIn > 0) {
                         if(this.items[i].quality > 0) {
                             if((this.items[i].quality - 4) >= 0) {  //P.S.: Requirement says 'Quality degrades twice as fast as //normal items'. My understanding abou this is, value should decrement by 4 units, because normal items //degrades quality twice or by 2 units.// 
@@ -126,7 +126,7 @@ class Shop {
         //Quality degrades twice, meaning, decrement by 2 units.
         //=====================================================//
         else { 
-            if(this.items[i].sellIn) > 0 {
+            if(this.items[i].sellIn > 0) {
                 if(this.items[i].quality > 0) {
                     if((this.items[i].quality - 2) >= 0) {
                         this.items[i].quality = this.items[i].quality - 2;
@@ -150,7 +150,7 @@ class Shop {
     return this.items;
   }
 }
-module.exports = {
+exports = {
   Item,
   Shop
 }
